@@ -2,10 +2,14 @@
 version: 2
 updates:
 
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
-      timezone: "Europe/Berlin"
-    target-branch: "master"
+      interval: 'daily'
+      timezone: 'Europe/Berlin'
+    target-branch: 'master'
     open-pull-requests-limit: 30
+    ignore:
+      - dependency-name: '@types/node'
+        update-types:
+          - 'version-update:semver-major'
